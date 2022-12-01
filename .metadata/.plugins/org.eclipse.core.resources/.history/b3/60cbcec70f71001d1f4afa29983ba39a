@@ -1,0 +1,10 @@
+package com.caresoft.clinicapp;
+
+public class AdminUser extends User implements HIPAACompliantUser, HIPPACompliantAdmin {
+
+	public AdminUser() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

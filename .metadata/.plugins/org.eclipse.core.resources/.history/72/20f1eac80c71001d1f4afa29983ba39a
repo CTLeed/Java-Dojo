@@ -1,0 +1,7 @@
+package com.caresoft.clinicapp;
+
+import User.java;
+
+public class Physician extends java implements HIPAACompliantUser {
+
+}

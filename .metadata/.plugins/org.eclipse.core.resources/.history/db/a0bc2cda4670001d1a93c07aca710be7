@@ -1,0 +1,24 @@
+package com.codingdojo.car;
+
+public class Driver extends Car {	
+
+	public Driver() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public void drive() {
+		this.gas -= 1;
+		System.out.println("Drive! Gas is now at: " + this.displayGas());
+	}
+	
+	public void useBoosters() {
+		this.gas -= 3;
+		System.out.println("Use Boosters! Gas is now at: " + this.displayGas());
+	}
+	
+	public void refuel() {
+		this.gas += 2;
+		System.out.println("Refuel! Gas is now at: " + this.displayGas());
+	}
+}

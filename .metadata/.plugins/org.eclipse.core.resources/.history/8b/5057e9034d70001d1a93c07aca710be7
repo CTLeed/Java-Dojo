@@ -1,0 +1,31 @@
+package com.codingdojo.zoo;
+
+public class Mammal {
+	private int energyLevel;
+
+	public int getEnergyLevel() {
+		return energyLevel;
+	}
+
+	public void setEnergyLevel(int x) {
+		int energyChange = Integer.signum(x);
+		if(energyChange <= 0 ) {
+			this.energyLevel -= energyChange;			
+		} else if(energyChange > 0) {
+			this.energyLevel += energyChange;
+		}
+	}
+
+	public Mammal() {
+		this.energyLevel = 100;
+	}
+	
+	public Mammal(int energy) {
+		this.energyLevel = energy;
+	}
+	
+	public int displayEnergy() {
+		System.out.println("Energy level is: " + this.energyLevel);
+		return this.energyLevel;
+	}
+}

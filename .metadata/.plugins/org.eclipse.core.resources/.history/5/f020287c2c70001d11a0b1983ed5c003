@@ -1,0 +1,28 @@
+package com.colbyleed.car;
+
+public class Car {
+//	MEMBER VARIABLES
+	private String engine;
+	private int wheels;
+	private boolean automatic;
+	private int odometer;
+	
+//	CONSTRUCTORS
+	public Car() {
+		this.engine = "V4";
+		this.wheels = 4;
+		this.automatic = false;
+		this.odometer = 0;
+	}
+	
+	public Car(String engine, int wheels, boolean automatic, int odometer) {
+		this.engine = engine;
+		this.wheels = wheels;
+		this.automatic = automatic;
+		this.odometer = odometer;
+	}
+	
+	
+//	GETTERS / SETTERS / OTHER METHODS
+	
+}

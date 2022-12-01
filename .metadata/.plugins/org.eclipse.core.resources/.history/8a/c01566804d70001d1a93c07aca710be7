@@ -1,0 +1,26 @@
+package com.codingdojo.zoo;
+
+public class Gorilla extends Mammal {
+
+	public Gorilla() {
+		super();
+	}
+
+	public void throwSomething() {
+		this.setEnergyLevel(-5);
+		System.out.println("The gorilla has thrown something!");
+		this.displayEnergy();
+	}
+	
+	public void eatBananas() {
+		this.setEnergyLevel(10);
+		System.out.println("The gorilla is very satisfied with the bananas.");
+		this.displayEnergy();
+	}
+	
+	public void climb() {
+		this.setEnergyLevel(-10);
+		System.out.println("The gorilla has climbed a tree!");
+		this.displayEnergy();
+	}
+}

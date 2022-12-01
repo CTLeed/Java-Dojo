@@ -1,0 +1,35 @@
+package com.codingdojo.car;
+
+public class Driver extends Car {	
+
+	public Driver() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public void drive() {
+		this.gas -= 1;
+		System.out.println("You drive the car.");
+		System.out.println("Gas remaining: " + this.displayGas() + "/10");
+	}
+	
+	public void boost() {
+		if(this.gas > 3) {
+			this.gas -= 3;
+			System.out.println("You used the boost!");
+			System.out.println("Gas remaining: " + this.displayGas() + "/10");			
+		} else {
+			System.out.println("Not enough gas");
+		}
+	}
+	
+	public void refuel() {
+		if(this.gas < 9) {
+			this.gas += 2;
+			System.out.println("You have refueled.");
+			System.out.println("Gas remaining: " + this.displayGas() + "/10");			
+		} else {
+			System.out.println("Can't fill it up anymore");
+		}
+	}
+}

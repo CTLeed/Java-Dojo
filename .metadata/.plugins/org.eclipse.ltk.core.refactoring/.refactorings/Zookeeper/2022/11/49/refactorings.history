@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.codingdojo.zoo.Mammals&apos; to &apos;Mammal&apos;&#x0D;&#x0A;- Original project: &apos;Zookeeper&apos;&#x0D;&#x0A;- Original element: &apos;com.codingdojo.zoo.Mammals&apos;&#x0D;&#x0A;- Renamed element: &apos;com.codingdojo.zoo.Mammal&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Rename similarly named elements&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Mammals&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.codingdojo.zoo{Mammals.java[Mammals" matchStrategy="1" name="Mammal" qualified="false" references="true" similarDeclarations="true" stamp="1669769455860" textual="false" version="1.0"/>
+</session>

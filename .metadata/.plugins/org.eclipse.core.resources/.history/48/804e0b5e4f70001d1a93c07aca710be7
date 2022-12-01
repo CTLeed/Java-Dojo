@@ -1,0 +1,10 @@
+package com.codingdojo.zoo;
+
+public class Bat extends Mammal {
+
+	public Bat() {
+		super();
+		this.energyLevel = 300;
+	}
+
+}

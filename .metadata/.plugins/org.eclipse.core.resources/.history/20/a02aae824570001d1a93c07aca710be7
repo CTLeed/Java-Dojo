@@ -1,0 +1,5 @@
+package com.codingdojo.car;
+
+public class Driver extends Car {
+
+}

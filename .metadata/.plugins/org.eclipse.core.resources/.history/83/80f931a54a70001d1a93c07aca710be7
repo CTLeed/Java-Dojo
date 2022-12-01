@@ -1,0 +1,27 @@
+package com.codingdojo.zoo;
+
+public class Gorilla extends Mammal {
+
+	public Gorilla() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public void throwSomething() {
+		this.setEnergyLevel(-5)
+		System.out.println("The gorilla has thrown something!");
+		System.out.println("It's energy level has dropped by 5 and is now: " + this.displayEnergy());
+	}
+	
+	public void eatBananas() {
+		this.setEnergyLevel(10);
+		System.out.println("The gorilla is very satisfied with the bananas.");
+		System.out.println("It's energy level has increased by 10 and is now: " + this.displayEnergy());
+	}
+	
+	public void climb() {
+		this.setEnergyLevel(-10);
+		System.out.println("The gorilla has climbed a tree!");
+		System.out.prinln("It's energy level has decreased by 10 and is now: " this.displayEnergy());
+	}
+}

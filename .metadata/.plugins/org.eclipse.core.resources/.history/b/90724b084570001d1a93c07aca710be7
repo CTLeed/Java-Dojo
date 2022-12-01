@@ -1,0 +1,10 @@
+package com.codingdojo.car;
+
+public class Car {
+	private int gas;
+
+	public Car() {
+		this.gas = 10;
+	}
+	
+}

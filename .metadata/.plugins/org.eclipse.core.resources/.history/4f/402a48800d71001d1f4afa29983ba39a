@@ -1,0 +1,12 @@
+package com.caresoft.clinicapp;
+
+public class User {
+    protected Integer id;
+    
+    public User(Integer id) {
+		super();
+		this.id = id;
+		this.pin = pin;
+	}
+	protected int pin;
+}
