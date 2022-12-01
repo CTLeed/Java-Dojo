@@ -1,1 +1,1 @@
-"# Java-Dojo" 
+"Java Projects for Coding Dojo" 
