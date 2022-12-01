@@ -22,7 +22,7 @@ public class AdminUser extends User implements HIPAACompliantUser, HIPPAComplian
 	@Override
 	public boolean assignPin(int pin) {
 		int length = (int) (Math.log10(pin) + 1);
-    	if(length == 6) {
+    	if(length >= 6) {
     		return true;
     	} else {
     		return false;			

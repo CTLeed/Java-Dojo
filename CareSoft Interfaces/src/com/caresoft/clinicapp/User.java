@@ -7,7 +7,6 @@ public class User {
     
     public User(Integer id) {
 		this.id = id;
-		this.pin = pin;
 	}
     
     public Integer getId() {

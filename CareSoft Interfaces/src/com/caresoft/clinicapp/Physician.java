@@ -1,6 +1,6 @@
 package com.caresoft.clinicapp;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 
 public class Physician extends User implements HIPAACompliantUser {
@@ -18,6 +18,7 @@ public class Physician extends User implements HIPAACompliantUser {
     public boolean assignPin(int pin) {
     	int length = (int) (Math.log10(pin) + 1);
     	if(length == 4) {
+    		this.pin = pin;
     		return true;
     	} else {
     		return false;			
