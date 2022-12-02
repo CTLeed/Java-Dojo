@@ -11,6 +11,7 @@ public class Physician extends User implements HIPAACompliantUser {
     // TO DO: Constructor that takes an ID
     public Physician(int id) {
     	super(id);
+    	this.patientNotes = new ArrayList<String>();
    }
     
     // TO DO: Implement HIPAACompliantUser!
