@@ -1,4 +1,4 @@
-package com.colbyleed.userdemo.models;
+package com.colbyleed.book.models;
 
 import java.util.Date;
 
@@ -13,39 +13,37 @@ import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-
 @Entity
-@Table(name="users")
-public class User {
-//	MEMBER VARIABLES
+@Table(name="books")
+public class Book {
+	
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	private String fullName;
-	private String email;
-	private String password;
-	private int age;
-
+	
+	private String title;
+	private String description;
+	private String language;
+	private int numOfPages;
+	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
-
-//	CONSTRUCTOR
+	
 //	EMPTY CONSTRUCTOR
-	public User() {}
-	
+	public Book() {}
+
 //	FULL CONSTRUCTOR
-	public User(String email, String password, int age, String fullName) {
+	public Book(String title, String description, String language, int numOfPages) {
 		super();
-		this.email = email;
-		this.password = password;
-		this.age = age;
+		this.title = title;
+		this.description = description;
+		this.numOfPages = numOfPages;
 	}
-	
+
 	@PrePersist
 	protected void onCreate() {
 		this.createdAt = new Date();
@@ -55,62 +53,71 @@ public class User {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
-	
-//GETTERS / SETTERS / OTHER METHODS
+
 	public Long getId() {
 		return id;
 	}
+
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getEmail() {
-		return email;
+
+	public String getTitle() {
+		return title;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getPassword() {
-		return password;
+
+	public String getDescription() {
+		return description;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public int getAge() {
-		return age;
+
+	public String getLanguage() {
+		return language;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setLanguage(String language) {
+		this.language = language;
 	}
+
+	public int getNumOfPages() {
+		return numOfPages;
+	}
+
+
+	public void setNumOfPages(int numOfPages) {
+		this.numOfPages = numOfPages;
+	}
+
 
 	public Date getCreatedAt() {
 		return createdAt;
 	}
 
+
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+
 
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
 
+
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
 }
