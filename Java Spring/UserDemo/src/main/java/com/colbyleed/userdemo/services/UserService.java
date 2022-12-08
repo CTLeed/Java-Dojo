@@ -29,12 +29,6 @@ public class UserService {
 //	GET ONE USER
 	public User findUser(Long id) {
 		return userRepo.findById(id).orElse(null);
-//		Optional<User> optionalUser = userRepo.findById(id);
-//		if(optionalUser.isPresent()) {
-//			return optionalUser.get();
-//		} else {
-//			return null;
-//		}
 	}
 	
 //	UPDATE A USER

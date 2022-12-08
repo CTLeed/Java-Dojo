@@ -1,5 +1,6 @@
-package com.colbyleed.userdemo.models;
+package com.colbyleed.savetravels.models;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -10,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -21,46 +20,44 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
-@Table(name="users")
-public class User {
-//	MEMBER VARIABLES
+@Table(name="expenses")
+public class Expense {
+	
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-
-	@NotEmpty
-	@Size(min=3, max=100, message="CUSTOM MESSAGE FOR FULL NAME")
-	private String fullName;
 	
-	@NotEmpty
-	@Email
-	private String email;
+	@Size(min=3, max=200)
+	private String name;
 	
-	@NotEmpty
-	private String password;
+	@Size(min=3, max=200)
+	private String vendor;
 	
 	@NotNull
 	@Min(0)
-	@Max(130)
-	private int age;
-
+	private BigDecimal amount;
+	
+	@NotEmpty
+	@Size(min=3, max=200)
+	private String description;
+	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
-
-//	CONSTRUCTOR
-//	EMPTY CONSTRUCTOR
-	public User() {}
 	
-//	FULL CONSTRUCTOR
-	public User(String email, String password, int age, String fullName) {
+	
+	public Expense() {}
+
+
+	public Expense(String name, String vendor, BigDecimal amount, String description) {
 		super();
-		this.email = email;
-		this.password = password;
-		this.age = age;
+		this.name = name;
+		this.vendor = vendor;
+		this.amount = amount;
+		this.description = description;
 	}
 	
 	@PrePersist
@@ -72,62 +69,75 @@ public class User {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
-	
-//GETTERS / SETTERS / OTHER METHODS
+
+
 	public Long getId() {
 		return id;
 	}
+
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getEmail() {
-		return email;
+
+	public String getName() {
+		return name;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getPassword() {
-		return password;
+
+	public String getVendor() {
+		return vendor;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+
+	public void setVendor(String vendor) {
+		this.vendor = vendor;
 	}
 
-	public int getAge() {
-		return age;
+
+	public BigDecimal getAmount() {
+		return amount;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+
+	public void setAmount(BigDecimal amount) {
+		this.amount = amount;
 	}
+
+
+	public String getDescription() {
+		return description;
+	}
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 
 	public Date getCreatedAt() {
 		return createdAt;
 	}
 
+
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+
 
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
 
+
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
+	
 }
