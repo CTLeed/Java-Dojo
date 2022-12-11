@@ -64,18 +64,19 @@ public class UserController {
 			return "index.jsp";
 		}
 		session.setAttribute("user_id", loggedUser.getId());
-		session.setAttribute("userName", loggedUser.getUserName());
-		return "redirect:/homepage";
-		
+		return "redirect:/homepage";		
 	}
 	
 	@GetMapping("/homepage")
 	public String homepage(
-			HttpSession session
+			HttpSession session,
+			Model model
 			) {
-		if(session.getAttribute("user_id") == null) {
+		Long userId = (Long) session.getAttribute("user_id");
+		if(userId == null) {
 			return "redirect:/";
 		}
+		model.addAttribute("userObj", userServ.getOneUser(userId));
 		return "dashboard.jsp";
 	}
 	

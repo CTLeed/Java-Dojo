@@ -1,5 +1,6 @@
-package com.colbyleed.authentication.services;
+package com.colbyleed.bookclub.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -7,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
-import com.colbyleed.authentication.models.LoginUser;
-import com.colbyleed.authentication.models.User;
-import com.colbyleed.authentication.repositories.UserRepository;
+import com.colbyleed.bookclub.models.LoginUser;
+import com.colbyleed.bookclub.models.User;
+import com.colbyleed.bookclub.repositories.UserRepository;
 
 @Service
 public class UserService {
@@ -17,11 +18,10 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepo;
 	
-	public User register(User newUser, BindingResult results) {
-		
+	public User register(User newUser, BindingResult results) {		
 		
 //		CHECK TO SEE IF PASSWORD AND CONFIRM DOES NOT MATCH
-		if(userRepo.findByEmail(newUser.getEmail()).orElse(null) != null) {
+		if(this.checkEmail(newUser.getEmail())) {
 			results.rejectValue("email", "Email-taken", "Email is already in use");
 		}
 		if(!newUser.getPassword().equals(newUser.getConfirm())) {
@@ -69,9 +69,26 @@ public class UserService {
 		}
 		
 	}
-
+	
+//	READ ONE
 	public User getOneUser(Long userId) {
 		return userRepo.findById(userId).orElse(null);
 	}
-		
+	
+//	READ ALL
+	public List<User> getAllUsers() {
+		return userRepo.findAll();
+	}
+	
+//	UPDATE
+	public User updateUser(User updatedUser) {
+		return userRepo.save(updatedUser);
+	}
+	
+//	DELETE
+	public void deleteUser(Long id) {
+		userRepo.deleteById(id);
+	}
+	
+	
 }

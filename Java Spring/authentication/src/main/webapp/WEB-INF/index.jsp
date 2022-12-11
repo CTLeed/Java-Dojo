@@ -12,10 +12,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login & Registration</title>
+<title>Login And Registration</title>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/style.css">
-<!-- change to match your file/naming structure -->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
